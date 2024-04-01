@@ -2,7 +2,27 @@
 	"name": "ms-relative",
 	"version": "0.0.0",
 	"description": "",
-	"main": "dist/index.cjs",
+	"require": "dist/bundle.cjs",
+	"browser": "dist/bundle.mjs",
+	"import": "dist/index.mjs",
+	"main": "dist/bundle.mjs",
+	"unpkg": "dist/bundle.mjs",
+	"exports": {
+		".": {
+			"import": {
+				"default": "./dist/index.mjs",
+				"types": "./dist/index.d.ts"
+			},
+			"require": {
+				"default": "./dist/bundle.cjs",
+				"types": "./dist/bundle.d.cts"
+			},
+			"browser": {
+				"default": "./dist/bundle.mjs",
+				"types": "./dist/bundle.d.ts"
+			}
+		}
+	},
 	"scripts": {
 		"test": "vitest",
 		"build": "tsup"
