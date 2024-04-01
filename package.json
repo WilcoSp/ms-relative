@@ -1,0 +1,25 @@
+{
+	"name": "ms-relative",
+	"version": "0.0.0",
+	"description": "",
+	"main": "dist/index.cjs",
+	"scripts": {
+		"test": "vitest",
+		"build": "tsup"
+	},
+	"keywords": [
+		"ms",
+		"relative",
+		"ms-prettify"
+	],
+	"author": "Wilco Spruijt",
+	"license": "none yet",
+	"devDependencies": {
+		"@types/node": "^20.12.2",
+		"@vitest/coverage-v8": "^1.4.0",
+		"esbuild-plugin-file-path-extensions": "^2.0.0",
+		"tsup": "^8.0.2",
+		"typescript": "^5.4.3",
+		"vitest": "^1.4.0"
+	}
+}
