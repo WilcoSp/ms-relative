@@ -25,7 +25,8 @@
 	},
 	"scripts": {
 		"test": "vitest",
-		"build": "tsup"
+		"build": "tsup",
+		"coverage": "vitest run --coverage"
 	},
 	"keywords": [
 		"ms",

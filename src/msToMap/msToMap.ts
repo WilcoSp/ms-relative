@@ -11,13 +11,15 @@ export interface msToMapOptions {
 	max?: number;
 }
 
+export type UnitValueMap = Map<UnitType, number>;
+
 /**
  * make a map from the time given in ms seconds
  * @param time time in ms seconds
  * @param options.max max amount of values that should be saved in the map
  * @returns an map with the key being the unitTypes and the value the amount of it gotten from the time
  */
-export function msToMap(time: number, options: msToMapOptions = {}) {
+export function msToMap(time: number, options: msToMapOptions = {}): UnitValueMap {
 	let { max = 7 } = options;
 	const negative = time < 0;
 	time = Math.abs(time);
