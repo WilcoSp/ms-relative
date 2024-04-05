@@ -14,7 +14,13 @@ export function format(time: number, options: FormatOptions = {}, locale?: strin
 	return formatParts(unitMap, rltf).join(" ");
 }
 
-function formatParts(map: UnitValueMap, rltf: Intl.RelativeTimeFormat) {
+/**
+ * format all values & units into relative format parts
+ * @param map map with value & unitTypes
+ * @param rltf Intl.RelativeTimeFormat
+ * @returns parts as a string[]
+ */
+export function formatParts(map: UnitValueMap, rltf: Intl.RelativeTimeFormat) {
 	return [...map].map(([unitType, value], index, arr) => {
 		const part = formatPart(Math.abs(value), unitType, rltf);
 		if (value < 0 && index < 1) {
@@ -24,7 +30,14 @@ function formatParts(map: UnitValueMap, rltf: Intl.RelativeTimeFormat) {
 	});
 }
 
-function formatPart(value: number, unitType: UnitType, rltf: Intl.RelativeTimeFormat) {
+/**
+ * format a single value & unit type to a formatted part
+ * @param value the value of the part
+ * @param unitType the unit type this part is for
+ * @param rltf Intl.RelativeTimeFormat
+ * @returns a single part as a string
+ */
+export function formatPart(value: number, unitType: UnitType, rltf: Intl.RelativeTimeFormat) {
 	const parts = rltf.formatToParts(value, unitType);
 	const comparison = rltf.formatToParts(value, "quarter");
 	// parts only exist out of 3 or 2 parts, not more
