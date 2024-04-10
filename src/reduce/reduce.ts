@@ -4,9 +4,15 @@
  * @param comparison to compare with (should be quarter or month as these aren't being used)
  * @returns string with number and unit (for example: `1 day` or `1d`)
  */
-export function reducePartsOf3(from: Intl.RelativeTimeFormatPart[], comparison: Intl.RelativeTimeFormatPart[]) {
+export function reducePartsOf3(from: Intl.RelativeTimeFormatPart[], comparison: Intl.RelativeTimeFormatPart[], includeValue: boolean = true) {
 	return from.reduce((acc, value, index) => {
-		if ("unit" in value || value.value != comparison[index].value) {
+		if ("unit" in value) {
+			if (includeValue) {
+				acc.push(value.value);
+			}
+			return acc;
+		}
+		if (value.value != comparison[index].value) {
 			acc.push(value.value);
 		}
 
@@ -23,10 +29,12 @@ const space = " ";
  * @returns string with number and unit (for example: `1 day` or `1d`)
  */
 // js runtimes are kinda lazy in a good way with how they do month & 'over'/'ago' with the latter not changing
-export function reducePartsOf2(from: Intl.RelativeTimeFormatPart[], comparison: Intl.RelativeTimeFormatPart[]) {
+export function reducePartsOf2(from: Intl.RelativeTimeFormatPart[], comparison: Intl.RelativeTimeFormatPart[], includeValue: boolean = true) {
 	return from.reduce((acc, value, index) => {
 		if ("unit" in value) {
-			acc.push(value.value);
+			if (includeValue) {
+				acc.push(value.value);
+			}
 			return acc;
 		}
 		if (value.value.trim().includes(space)) {
