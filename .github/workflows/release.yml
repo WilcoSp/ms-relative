@@ -16,4 +16,5 @@ jobs:
               with:
                   node-version: current
                   cache: "pnpm"
+            - run: pnpm install --frozen-lockfile
             - run: pnpm bumpp
