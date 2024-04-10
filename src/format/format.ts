@@ -5,7 +5,7 @@ import type { UnitType } from "../units/units";
 
 export type FormatOptions = msToMapOptions & RelativeOptions;
 
-export function format(time: number, options: FormatOptions = {}, locale?: string) {
+export function format(time: number, options: FormatOptions = {}, locale?: string): string {
 	const { max, localeMatcher, style } = options;
 	const unitMap = msToMap(time, { max });
 
@@ -20,7 +20,7 @@ export function format(time: number, options: FormatOptions = {}, locale?: strin
  * @param rltf Intl.RelativeTimeFormat
  * @returns parts as a string[]
  */
-export function formatParts(map: UnitValueMap, rltf: Intl.RelativeTimeFormat) {
+export function formatParts(map: UnitValueMap, rltf: Intl.RelativeTimeFormat): string[] {
 	return [...map].map(([unitType, value], index, arr) => {
 		const part = formatPart(Math.abs(value), unitType, rltf);
 		if (value < 0 && index < 1) {
@@ -37,7 +37,7 @@ export function formatParts(map: UnitValueMap, rltf: Intl.RelativeTimeFormat) {
  * @param rltf Intl.RelativeTimeFormat
  * @returns a single part as a string
  */
-export function formatPart(value: number, unitType: UnitType, rltf: Intl.RelativeTimeFormat) {
+export function formatPart(value: number, unitType: UnitType, rltf: Intl.RelativeTimeFormat): string {
 	const parts = rltf.formatToParts(value, unitType);
 	const comparison = rltf.formatToParts(value, "quarter");
 	// parts only exist out of 3 or 2 parts, not more

@@ -10,7 +10,7 @@ const convertMap = {
 	[unitTypes.second]: second,
 } satisfies Partial<Record<UnitType, number>>;
 
-export function createConvertMap(rl: Intl.RelativeTimeFormat) {
+export function createConvertMap(rl: Intl.RelativeTimeFormat): Map<string, number> {
 	const quarterSingular = rl.formatToParts(1, "quarter");
 	const quartersPlural = rl.formatToParts(2, "quarters");
 

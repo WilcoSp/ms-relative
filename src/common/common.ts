@@ -7,7 +7,7 @@ export type RelativeOptions = Pick<Intl.RelativeTimeFormatOptions, "style" | "lo
  * @returns a new RelativeTimeFormat object
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat
  */
-export function createRelativeTimeFormat(locale?: string, options?: RelativeOptions) {
+export function createRelativeTimeFormat(locale?: string, options?: RelativeOptions): Intl.RelativeTimeFormat {
 	return new Intl.RelativeTimeFormat(locale, {
 		numeric: "always",
 		...options,

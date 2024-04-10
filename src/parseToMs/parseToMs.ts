@@ -35,7 +35,7 @@ export interface toMsOptions {
  * parseToMs("year 5 days 10 minutes", { locale: "en-US", style: "long" }) => 79_974_600_000
  * ```
  */
-export function parseToMs(value: string, { locale, style, localeMatcher }: toMsOptions) {
+export function parseToMs(value: string, { locale, style, localeMatcher }: toMsOptions): number | null {
 	value = value.trim().toLowerCase();
 	if (isNumber(value)) {
 		return parseFloat(value);

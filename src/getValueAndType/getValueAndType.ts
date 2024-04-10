@@ -1,11 +1,17 @@
 import { unitTypes, day, hour, minute, second, week, year, type UnitType } from "../units/units";
 
+export interface ValueAndType {
+	leftOverTime: number;
+	value: number;
+	type: UnitType;
+}
+
 /**
  * get the biggest value & unit type that can be extracted from the given time in milliseconds
  * @param time time in milliseconds
  * @returns an object containing the type, value & leftOverTime
  */
-export function getBiggestValueAndType(time: number) {
+export function getBiggestValueAndType(time: number): ValueAndType {
 	switch (true) {
 		case time > year: {
 			return createValueAndType(time, year, unitTypes.year);
@@ -42,7 +48,7 @@ export function getBiggestValueAndType(time: number) {
  * @param type the type of unit
  * @returns an object containing the type, value & leftOverTime
  */
-function createValueAndType(time: number, unitValue: number, type: UnitType) {
+function createValueAndType(time: number, unitValue: number, type: UnitType): ValueAndType {
 	const value = Math.floor(time / unitValue);
 	const leftOverTime = time - unitValue * value;
 
