@@ -30,7 +30,7 @@
 		"test": "vitest --run",
 		"build": "tsup",
 		"coverage": "vitest run --coverage",
-		"release": "pnpm test && pnpm build"
+		"tsLint": "tsc"
 	},
 	"keywords": [
 		"ms",
