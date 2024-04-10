@@ -1,5 +1,12 @@
 {
 	"name": "@wilcosp/ms-relative",
 	"version": "0.0.0-test.1",
-	"exports": "./src/index.ts"
+	"exports": "./src/index.ts",
+	"publish": {
+		"include": ["license", "readme.md", "src/**/*.ts"]
+	},
+	"author": "Wilco Spruijt",
+	"license": "MIT",
+	"homepage": "https://github.com/WilcoSp/ms-relative",
+	"repository": "https://github.com/WilcoSp/ms-relative"
 }
