@@ -7,7 +7,6 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
-        needs: test
         steps:
             - uses: actions/checkout@v3
             - uses: pnpm/action-setup@v3
@@ -18,7 +17,10 @@ jobs:
                   node-version: current
                   cache: "pnpm"
             - run: pnpm install --frozen-lockfile
-            - run: pnpm build
+            - name: last time test
+              run: pnpm test
+            - name: building
+              run: pnpm build
 
     publishNpm:
         runs-on: ubuntu-latest
