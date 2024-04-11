@@ -1,6 +1,13 @@
 name: test
 
-on: [push, workflow_dispatch]
+# on: [push, workflow_dispatch]
+on:
+    push:
+        branches:
+            - "*"
+    workflow_dispatch:
+        branches:
+            - "*"
 
 jobs:
     test:
