@@ -11,6 +11,9 @@
 	"import": "dist/index.mjs",
 	"main": "dist/bundle.mjs",
 	"unpkg": "dist/bundle.mjs",
+	"publishConfig": {
+		"access": "public"
+	},
 	"exports": {
 		".": {
 			"import": {
