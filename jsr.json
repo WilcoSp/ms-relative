@@ -3,11 +3,7 @@
 	"version": "0.0.1",
 	"exports": "./src/index.ts",
 	"publish": {
-		"include": [
-			"license",
-			"readme.md",
-			"src/**/*.ts"
-		]
+		"include": ["license", "readme.md", "src/**/*.ts", "jsr.json"]
 	},
 	"author": "Wilco Spruijt",
 	"license": "MIT",
