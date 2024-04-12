@@ -24,7 +24,7 @@ export type FormatOptions = msToMapOptions &
  * format(1080003000, { style: "long", locale:  "en-US"}) => "5 days 3 seconds"
  * ```
  * @example ```ts
- * format(489348000000, { style: "short", max: 2, locale: "en-US") => "6 yr. 10 wk."
+ * format(489348005000, { style: "short", max: 2, locale: "en-US") => "6 yr. 10 wk."
  * ```
  */
 export function format(time: number, options: FormatOptions = {}): string {
