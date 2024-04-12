@@ -34,10 +34,10 @@ jobs:
               with:
                   node-version: current
                   cache: "pnpm"
-            # - name: publish to npm
-            #   run: pnpm publish
-            #   env:
-            #       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            - name: publish to npm
+              run: pnpm publish
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     publish-jsr:
         needs: build
