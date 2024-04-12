@@ -1,19 +1,20 @@
 /**
  * all unit types used by msToMap & msToObject
+
  */
-export const unitTypes = {
+export const unitTypes: Record<UnitType, UnitType> = {
 	year: "year",
 	week: "week",
 	day: "day",
 	hour: "hour",
 	minute: "minute",
 	second: "second",
-} satisfies Partial<Record<Intl.RelativeTimeFormatUnitSingular, Intl.RelativeTimeFormatUnitSingular>>;
+} satisfies Record<UnitType, UnitType>;
 
 /**
  * used as keys for msToMap & msToObject
  */
-export type UnitType = (typeof unitTypes)[keyof typeof unitTypes];
+export type UnitType = Exclude<Intl.RelativeTimeFormatUnitSingular, "quarter" | "month">; //(typeof unitTypes)[keyof typeof unitTypes];
 
 /**
  * amount of ms in a second

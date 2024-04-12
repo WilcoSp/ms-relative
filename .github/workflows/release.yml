@@ -34,8 +34,9 @@ jobs:
               with:
                   node-version: current
                   cache: "pnpm"
+                  registry-url: https://registry.npmjs.org/
             - name: publish to npm
-              run: pnpm publish
+              run: pnpm publish --no-git-checks
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -55,4 +56,4 @@ jobs:
                   node-version: current
                   cache: "pnpm"
             - name: publish to JSR
-              run: pnpm dlx jsr publish --allow-slow-types
+              run: pnpm dlx jsr publish

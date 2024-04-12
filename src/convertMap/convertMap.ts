@@ -1,15 +1,24 @@
 import { reducePartsOf2, reducePartsOf3 } from "../reduce/reduce";
 import { day, hour, minute, second, unitTypes, week, year, type UnitType } from "../units/units";
 
-const convertMap = {
+/**
+ * A map to be used for createConvertMap
+ */
+//@ts-ignore
+const convertMap: Record<UnitType, number> = {
 	[unitTypes.year]: year,
 	[unitTypes.week]: week,
 	[unitTypes.day]: day,
 	[unitTypes.hour]: hour,
 	[unitTypes.minute]: minute,
 	[unitTypes.second]: second,
-} satisfies Partial<Record<UnitType, number>>;
+};
 
+/**
+ * create a Map with unitType in the chosen locale and the ms in unit value
+ * @param rl RelativeTimeFormat object
+ * @returns a Map with unitType in the chosen locale and the ms in unit value
+ */
 export function createConvertMap(rl: Intl.RelativeTimeFormat): Map<string, number> {
 	const quarterSingular = rl.formatToParts(1, "quarter");
 	const quartersPlural = rl.formatToParts(2, "quarters");
