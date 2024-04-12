@@ -3,10 +3,32 @@ import { msToMap, type UnitValueMap, type msToMapOptions } from "../msToMap/msTo
 import { reducePartsOf2, reducePartsOf3 } from "../reduce/reduce";
 import type { UnitType } from "../units/units";
 
-export type FormatOptions = msToMapOptions & RelativeOptions;
+/**
+ * Options for
+ */
+export type FormatOptions = msToMapOptions &
+	RelativeOptions & {
+		/**
+		 * 5 days 3 seconds
+		 */
+		locale?: string;
+	};
 
-export function format(time: number, options: FormatOptions = {}, locale?: string): string {
-	const { max, localeMatcher, style } = options;
+/**
+ *
+ * @param time time is milliseconds
+ * @param options options you want
+ * @returns a formatted string based on your options
+ *
+ * @example ```ts
+ * format(1080003000, { style: "long", locale:  "en-US"}) => "5 days 3 seconds"
+ * ```
+ * @example ```ts
+ * format(489348000000, { style: "short", max: 2, locale: "en-US") => "6 yr. 10 wk."
+ * ```
+ */
+export function format(time: number, options: FormatOptions = {}): string {
+	const { max, locale } = options;
 	const unitMap = msToMap(time, { max });
 
 	const rltf = createRelativeTimeFormat(locale, options);

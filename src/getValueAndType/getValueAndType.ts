@@ -1,9 +1,21 @@
 import { unitTypes, day, hour, minute, second, week, year, type UnitType } from "../units/units";
 
+/**
+ * return type for getBiggestValueAndType
+ */
 export interface ValueAndType {
-	leftOverTime: number;
-	value: number;
+	/**
+	 * the unit type of the value
+	 */
 	type: UnitType;
+	/**
+	 * the amount of the specific unit type
+	 */
+	value: number;
+	/**
+	 * time left over after subtracting the unit type * amount from the given time
+	 */
+	leftOverTime: number;
 }
 
 /**

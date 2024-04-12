@@ -2,7 +2,7 @@ import type { UnitType } from "../units/units";
 import { getBiggestValueAndType } from "../getValueAndType/getValueAndType";
 
 /**
- * Options for msToMap
+ * Options for msToMap & functions it's being used by
  */
 export interface msToMapOptions {
 	/**
@@ -11,6 +11,9 @@ export interface msToMapOptions {
 	max?: number;
 }
 
+/**
+ * a Map from msToMap that has the units as keys and the amount of time as values
+ */
 export type UnitValueMap = Map<UnitType, number>;
 
 /**

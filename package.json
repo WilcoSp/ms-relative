@@ -1,7 +1,7 @@
 {
 	"name": "ms-relative",
 	"version": "0.0.1",
-	"description": "",
+	"description": "MS utility library for formatting/parsing milliseconds to/from strings in most locales",
 	"author": "Wilco Spruijt",
 	"license": "MIT",
 	"repository": "https://github.com/WilcoSp/ms-relative",
@@ -18,14 +18,10 @@
 		".": {
 			"import": {
 				"default": "./dist/index.mjs",
-				"types": "./dist/index.d.ts"
+				"types": "./dist/index.d.mts"
 			},
 			"require": {
 				"default": "./dist/bundle.cjs",
-				"types": "./dist/bundle.d.cts"
-			},
-			"browser": {
-				"default": "./dist/bundle.mjs",
 				"types": "./dist/bundle.d.ts"
 			}
 		}
