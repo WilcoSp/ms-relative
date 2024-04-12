@@ -18,9 +18,21 @@ function hasNumber(value: string): value is `${number}${string}` {
 	return /^\d/g.test(value);
 }
 
+/**
+ * Options for parseToMs
+ */
 export interface toMsOptions {
-	locale?: string;
+	/**
+	 * the style of the string you're giving `required`
+	 */
 	style: Intl.RelativeTimeFormatStyle;
+	/**
+	 * the locale the string is in
+	 */
+	locale?: string;
+	/**
+	 * locale matching algorithm you want to use
+	 */
 	localeMatcher?: Intl.RelativeTimeFormatLocaleMatcher;
 }
 
