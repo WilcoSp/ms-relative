@@ -4,12 +4,12 @@ import { reducePartsOf2, reducePartsOf3 } from "../reduce/reduce";
 import type { UnitType } from "../units/units";
 
 /**
- * Options for
+ * Options for `format`
  */
 export type FormatOptions = msToMapOptions &
 	RelativeOptions & {
 		/**
-		 * 5 days 3 seconds
+		 * the locale you want to use
 		 */
 		locale?: string;
 	};

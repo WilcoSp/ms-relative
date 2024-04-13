@@ -21,6 +21,12 @@ jobs:
               run: pnpm test
             - name: building
               run: pnpm build
+            - name: store build result
+              uses: actions/upload-artifact@v3
+              with:
+                  name: buildResult
+                  path: dist
+                  retention-days: 5
 
     publish-npm:
         needs: build
@@ -35,6 +41,11 @@ jobs:
                   node-version: current
                   cache: "pnpm"
                   registry-url: https://registry.npmjs.org/
+            - name: download build result
+              uses: actions/download-artifact@v4
+              with:
+                  name: buildResult
+                  path: dist
             - name: publish to npm
               run: pnpm publish --no-git-checks
               env:
