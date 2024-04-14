@@ -1,6 +1,7 @@
 ![License](https://img.shields.io/npm/l/ms-relative) [![npm](https://img.shields.io/npm/v/ms-relative)](https://www.npmjs.com/package/ms-relative)
 [![JSR](https://jsr.io/badges/@wilcosp/ms-relative)](https://jsr.io/@wilcosp/ms-relative)
 [![Vitest](https://github.com/wilcosp/ms-relative/actions/workflows/test.yml/badge.svg)](https://github.com/wilcosp/ms-relative/actions/workflows/test.yml)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/ms-relative?color=green)](https://bundlephobia.com/package/ms-relative)
 
 # ms-relative
 

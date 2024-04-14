@@ -7,6 +7,7 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+
         steps:
             - uses: actions/checkout@v3
             - uses: pnpm/action-setup@v3
@@ -31,6 +32,9 @@ jobs:
     publish-npm:
         needs: build
         runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            id-token: write
         steps:
             - uses: actions/checkout@v3
             - uses: pnpm/action-setup@v3
@@ -50,6 +54,7 @@ jobs:
               run: pnpm publish --no-git-checks
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NPM_CONFIG_PROVENANCE: true
 
     publish-jsr:
         needs: build
