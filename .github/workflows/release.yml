@@ -22,7 +22,7 @@ jobs:
             - name: building
               run: pnpm build
             - name: store build result
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                   name: buildResult
                   path: dist
