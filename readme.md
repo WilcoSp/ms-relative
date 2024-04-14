@@ -44,27 +44,50 @@ deno add @wilcosp/ms-relative
 
 ### Via cdn
 
--   Jsdelivr: https://cdn.jsdelivr.net/npm/ms-relative@{current version}
--   Esm.sh: https://esm.sh/ms-relative@{current version}
--   Unpkg: https://unpkg.com/ms-relative@{current version}
+-   Jsdelivr: https://cdn.jsdelivr.net/npm/ms-relative@\{current version}
+-   Esm.sh: https://esm.sh/ms-relative@\{current version}
+-   Unpkg: https://unpkg.com/ms-relative@\{current version}
 
 (replace {current version} with the current version of ms-relative, it's best to not use @latest)
 
 # Examples
+
+## Unit variables
+
+All units are being exported
+
+```ts
+import { second, minute, hour, day, week, year } from "ms-relative" // for npm
+// or
+import { second, minute, hour, day, week, year  } from "@wilcosp/ms-relative" // for jsr
+// or
+import { second, minute, hour, day, week, year  } from `https://cdn.jsdelivr.net/npm/ms-relative@\{current version}`
+
+second // amount of ms in a second
+minute // amount of ms in a minute
+hour // amount of ms in an hour
+day // amount of ms in a day
+week // amount of ms in a week
+year // average amount of ms in a year
+
+```
 
 ## format
 
 Format ms time to human readable string
 
 ```ts
-import { format } from "ms-relative" // for npm
+import { format, day, second, year, week } from "ms-relative" // for npm
 // or
-import { format } from "@wilcosp/ms-relative" // for jsr
+import { format, day, second, year, week } from "@wilcosp/ms-relative" // for jsr
 // or
-import { format } from `https://cdn.jsdelivr.net/npm/ms-relative@${current version}` // cdn (can also be esm.sh or unpkg)
+import { format, day, second, year, week } from `https://cdn.jsdelivr.net/npm/ms-relative@\{current version}` // cdn (can also be esm.sh or unpkg)
 
 format(1080003000, { style: "long", locale:  "en-US"}) => "5 days 3 seconds"
-format(489348005000, { style: "short", max: 2, locale: "en-US") => "6 yr. 10 wk."
+format(5 * day + 3 * second, { style: "long", locale:  "en-US"}) => "5 days 3 seconds"
+
+format(489348000000, { style: "short", max: 2, locale: "en-US"}) => "6 yr. 10 wk."
+format(year * 6 + 10 * week + 4 * day, { style: "short", max: 2, locale: "en-US"}) => "6 yr. 10 wk."
 ```
 
 ## parseToMs
@@ -78,10 +101,24 @@ import { parseToMs } from "ms-relative" // for npm
 // or
 import { parseToMs } from "@wilcosp/ms-relative" // for jsr
 // or
-import { parseToMs } from `https://esm.sh/ms-relative@${current version}` // cdn (can also be jsdelivr or unpkg)
+import { parseToMs } from `https://esm.sh/ms-relative@\{current version}` // cdn (can also be jsdelivr or unpkg)
 
 parseToMs("year 5 days 10 minutes", { locale: "en-US", style: "long" }) => 79_974_600_000
 
 ```
 
-// more example will be following
+## msToMap & msToObject
+
+Get a Map or object from a given time in ms with the keys being the unit types
+
+```ts
+import { msToMap, msToObject, year, minute } from "ms-relative"; // for npm
+// or
+import { msToMap, msToObject, year, minute } from "@wilcosp/ms-relative"; // for jsr
+// or
+import { msToMap, msToObject, year, minute } from "https://unpkg.com/ms-relative@{current version}"; //cdn, can also be used with jsdelivr or esn.sh
+
+msToMap(year * 6 + minute * 4) => Map([ ["year", 6], ["minute", 4] ])
+
+msToObject(day * 5 + hour * 9 + second * 10, {max: 2}) => { day: 5,  hour: 9 }
+```

@@ -24,7 +24,6 @@ describe("format", () => {
 		});
 
 		it("should give 6 years, 10 weeks but not 4 days", () => {
-			console.log(year * 6 + 10 * week + 4 * day);
 			expect(
 				format(year * 6 + 10 * week + 4 * day, {
 					style: "short",
