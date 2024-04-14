@@ -4,6 +4,7 @@
 	"description": "MS utility library for formatting/parsing milliseconds to/from strings in most locales",
 	"author": "Wilco Spruijt",
 	"license": "MIT",
+	"type": "module",
 	"repository": "https://github.com/WilcoSp/ms-relative",
 	"homepage": "https://github.com/WilcoSp/ms-relative",
 	"require": "dist/bundle.cjs",
