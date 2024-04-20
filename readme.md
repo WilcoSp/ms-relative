@@ -1,6 +1,6 @@
 ![License](https://img.shields.io/npm/l/ms-relative) [![npm](https://img.shields.io/npm/v/ms-relative?cv=0.0.3)](https://www.npmjs.com/package/ms-relative)
 [![JSR](https://jsr.io/badges/@wilcosp/ms-relative?cv=0.0.3)](https://jsr.io/@wilcosp/ms-relative)
-[![Vitest](https://github.com/wilcosp/ms-relative/actions/workflows/test.yml/badge.svg?cv=0.0.3)](https://github.com/wilcosp/ms-relative/actions/workflows/test.yml)
+[![Vitest](https://github.com/wilcosp/ms-relative/actions/workflows/vitest.yml/badge.svg?cv=0.0.3)](https://github.com/wilcosp/ms-relative/actions/workflows/test.yml)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/ms-relative?color=green&cv=0.0.3)](https://bundlephobia.com/package/ms-relative)
 [![GitHub Repo stars](https://img.shields.io/github/stars/wilcosp/ms-relative?style=flat&logo=github&color=green&cv=0.0.3)](https://github.com/WilcoSp/ms-relative)
 
