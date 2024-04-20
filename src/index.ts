@@ -7,3 +7,5 @@ export * from "./msToMap/msToMap";
 export * from "./parseToMs/parseToMs";
 export * from "./reduce/reduce";
 export * from "./units/units";
+export * from "./formatList/formatList";
+export * from "./formatParts/formatParts";

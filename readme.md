@@ -1,6 +1,8 @@
-![License](https://img.shields.io/npm/l/ms-relative) [![npm](https://img.shields.io/npm/v/ms-relative)](https://www.npmjs.com/package/ms-relative)
-[![JSR](https://jsr.io/badges/@wilcosp/ms-relative)](https://jsr.io/@wilcosp/ms-relative)
-[![Vitest](https://github.com/wilcosp/ms-relative/actions/workflows/test.yml/badge.svg)](https://github.com/wilcosp/ms-relative/actions/workflows/test.yml)
+![License](https://img.shields.io/npm/l/ms-relative) [![npm](https://img.shields.io/npm/v/ms-relative?cv=0.0.3)](https://www.npmjs.com/package/ms-relative)
+[![JSR](https://jsr.io/badges/@wilcosp/ms-relative?cv=0.0.3)](https://jsr.io/@wilcosp/ms-relative)
+[![Vitest](https://github.com/wilcosp/ms-relative/actions/workflows/vitest.yml/badge.svg?cv=0.0.3)](https://github.com/wilcosp/ms-relative/actions/workflows/test.yml)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/ms-relative?color=green&cv=0.0.3)](https://bundlephobia.com/package/ms-relative)
+[![GitHub Repo stars](https://img.shields.io/github/stars/wilcosp/ms-relative?style=flat&logo=github&color=green&cv=0.0.3)](https://github.com/WilcoSp/ms-relative)
 
 # ms-relative
 
@@ -19,7 +21,7 @@ Ms-relative is a new ms utility library build from the ground up that mines
 
 ## Note
 
-Can only be used with least Node 16.6, Deno 1.12, Chrome/Edge 92, Firefox 90 & Safari 15.4.
+Can only be used with least Node 16‎.6, Deno 1‎.12, Chrome/Edge 92, Firefox 90 & Safari 15‎.4.
 
 ## Install
 
@@ -44,11 +46,9 @@ deno add @wilcosp/ms-relative
 
 ### Via cdn
 
--   Jsdelivr: https://cdn.jsdelivr.net/npm/ms-relative@\{current version}
--   Esm.sh: https://esm.sh/ms-relative@\{current version}
--   Unpkg: https://unpkg.com/ms-relative@\{current version}
-
-(replace {current version} with the current version of ms-relative, it's best to not use @latest)
+-   Jsdelivr: https://cdn.jsdelivr.net/npm/ms-relative@0.0.3
+-   Esm.sh: https://esm.sh/ms-relative@0.0.3
+-   Unpkg: https://unpkg.com/ms-relative@0.0.3
 
 # Examples
 
@@ -61,7 +61,7 @@ import { second, minute, hour, day, week, year } from "ms-relative" // for npm
 // or
 import { second, minute, hour, day, week, year  } from "@wilcosp/ms-relative" // for jsr
 // or
-import { second, minute, hour, day, week, year  } from `https://cdn.jsdelivr.net/npm/ms-relative@\{current version}`
+import { second, minute, hour, day, week, year  } from `https://cdn.jsdelivr.net/npm/ms-relative@0.0.3
 
 second // amount of ms in a second
 minute // amount of ms in a minute
@@ -81,13 +81,31 @@ import { format, day, second, year, week } from "ms-relative" // for npm
 // or
 import { format, day, second, year, week } from "@wilcosp/ms-relative" // for jsr
 // or
-import { format, day, second, year, week } from `https://cdn.jsdelivr.net/npm/ms-relative@\{current version}` // cdn (can also be esm.sh or unpkg)
+import { format, day, second, year, week } from `https://cdn.jsdelivr.net/npm/ms-relative@0.0.3` // cdn (can also be esm.sh or unpkg)
 
 format(1080003000, { style: "long", locale:  "en-US"}) => "5 days 3 seconds"
 format(5 * day + 3 * second, { style: "long", locale:  "en-US"}) => "5 days 3 seconds"
 
 format(489348000000, { style: "short", max: 2, locale: "en-US"}) => "6 yr. 10 wk."
 format(year * 6 + 10 * week + 4 * day, { style: "short", max: 2, locale: "en-US"}) => "6 yr. 10 wk."
+```
+
+## formatList
+
+similar to format but uses Intl.ListFormat to join the parts together
+
+```ts
+import { formatList, day, second, year, week } from "ms-relative" // for npm
+// or
+import { format, day, second, year, week } from "@wilcosp/ms-relative" // for jsr
+// or
+import { format, day, second, year, week } from `https://esm.sh/ms-relative@0.0.3` // cdn (can also be jsdelivr or unpkg)
+
+formatList(1080003000, { relativeStyle: "long", listStyle: "long", locale:  "en-US"}) => "5 days and 3 seconds"
+formatList(5 * day + 3 * second, { relativeStyle: "long", listStyle: "short", locale:  "en-US"}) => "5 days & 3 seconds"
+
+formatList(489348000000, { relativeStyle: "short", listStyle: "short", max: 2, locale: "en-US"}) => "6 yr. & 10 wk."
+formatList(year * 6 + 10 * week + 4 * day, { relativeStyle: "short", listStyle: "short", listType: "unit", max: 2, locale: "en-US"}) => "6 yr., 10 wk."
 ```
 
 ## parseToMs
@@ -101,7 +119,7 @@ import { parseToMs } from "ms-relative" // for npm
 // or
 import { parseToMs } from "@wilcosp/ms-relative" // for jsr
 // or
-import { parseToMs } from `https://esm.sh/ms-relative@\{current version}` // cdn (can also be jsdelivr or unpkg)
+import { parseToMs } from `https://esm.sh/ms-relative@0.0.3` // cdn (can also be jsdelivr or unpkg)
 
 parseToMs("year 5 days 10 minutes", { locale: "en-US", style: "long" }) => 79_974_600_000
 
@@ -116,7 +134,7 @@ import { msToMap, msToObject, year, minute } from "ms-relative"; // for npm
 // or
 import { msToMap, msToObject, year, minute } from "@wilcosp/ms-relative"; // for jsr
 // or
-import { msToMap, msToObject, year, minute } from "https://unpkg.com/ms-relative@{current version}"; //cdn, can also be used with jsdelivr or esn.sh
+import { msToMap, msToObject, year, minute } from "https://unpkg.com/ms-relative@0.0.3"; //cdn, can also be used with jsdelivr or esn.sh
 
 msToMap(year * 6 + minute * 4) => Map([ ["year", 6], ["minute", 4] ])
 
