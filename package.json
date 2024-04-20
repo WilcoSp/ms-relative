@@ -10,7 +10,8 @@
 	"require": "dist/bundle.cjs",
 	"browser": "dist/bundle.mjs",
 	"import": "dist/index.mjs",
-	"main": "dist/bundle.mjs",
+	"main": "dist/index.mjs",
+	"typings": "dist/index.d.ts",
 	"unpkg": "dist/bundle.mjs",
 	"publishConfig": {
 		"access": "public"
@@ -18,12 +19,12 @@
 	"exports": {
 		".": {
 			"import": {
-				"default": "./dist/index.mjs",
-				"types": "./dist/index.d.mts"
+				"types": "./dist/index.d.mts",
+				"default": "./dist/index.mjs"
 			},
 			"require": {
-				"default": "./dist/bundle.cjs",
-				"types": "./dist/bundle.d.ts"
+				"types": "./dist/bundle.d.ts",
+				"default": "./dist/bundle.cjs"
 			}
 		}
 	},
