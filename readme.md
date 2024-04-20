@@ -21,7 +21,7 @@ Ms-relative is a new ms utility library build from the ground up that mines
 
 ## Note
 
-Can only be used with least Node 16.6, Deno 1.12, Chrome/Edge 92, Firefox 90 & Safari 15.4.
+Can only be used with least Node 16‎.6, Deno 1‎.12, Chrome/Edge 92, Firefox 90 & Safari 15‎.4.
 
 ## Install
 
