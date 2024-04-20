@@ -1,5 +1,5 @@
 import { createRelativeTimeFormat, type RelativeOptions } from "../common/common";
-import { formatParts } from "../formatParts/formatparts";
+import { formatParts } from "../formatParts/formatParts";
 import { msToMap, type msToMapOptions } from "../msToMap/msToMap";
 
 /**

@@ -1,5 +1,5 @@
 import { createRelativeTimeFormat } from "../common/common";
-import { formatParts } from "../formatParts/formatparts";
+import { formatParts } from "../formatParts/formatParts";
 import { msToMap, type msToMapOptions } from "../msToMap/msToMap";
 
 /**
@@ -35,10 +35,10 @@ export interface FormatListOptions extends msToMapOptions {
  * @param options options you wants
  * @returns a formatted list string based on your options
  * @example ```ts
- * format(1080003000, { relativeStyle: "long", listStyle: "long", locale:  "en-US"}) => "5 days and 3 seconds"
+ * formatList(1080003000, { relativeStyle: "long", listStyle: "long", locale:  "en-US"}) => "5 days and 3 seconds"
  * ```
  * @example ```ts
- * format(489348005000, { relativeStyle: "short", listStyle: "short", max: 2, locale: "en-US") => "6 yr., 10 wk."
+ * formatList(489348005000, { relativeStyle: "short", listStyle: "short", listType: "unit", max: 2, locale: "en-US") => "6 yr., 10 wk."
  * ```
  */
 export function formatList(time: number, options: FormatListOptions = {}): string {

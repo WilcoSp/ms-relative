@@ -90,6 +90,24 @@ format(489348000000, { style: "short", max: 2, locale: "en-US"}) => "6 yr. 10 wk
 format(year * 6 + 10 * week + 4 * day, { style: "short", max: 2, locale: "en-US"}) => "6 yr. 10 wk."
 ```
 
+## formatList
+
+similar to format but uses Intl.ListFormat to join the parts together
+
+```ts
+import { format, day, second, year, week } from "ms-relative" // for npm
+// or
+import { format, day, second, year, week } from "@wilcosp/ms-relative" // for jsr
+// or
+import { format, day, second, year, week } from `https://esm.sh/ms-relative@0.0.3` // cdn (can also be jsdelivr or unpkg)
+
+format(1080003000, { relativeStyle: "long", listStyle: "long", locale:  "en-US"}) => "5 days and 3 seconds"
+format(5 * day + 3 * second, { relativeStyle: "long", listStyle: "short", locale:  "en-US"}) => "5 days & 3 seconds"
+
+format(489348000000, { relativeStyle: "short", listStyle: "short", max: 2, locale: "en-US"}) => "6 yr. & 10 wk."
+format(year * 6 + 10 * week + 4 * day, { relativeStyle: "short", listStyle: "short", listType: "unit", max: 2, locale: "en-US"}) => "6 yr., 10 wk."
+```
+
 ## parseToMs
 
 Parse a human readable string to ms
