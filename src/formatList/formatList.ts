@@ -1,4 +1,5 @@
 import { createRelativeTimeFormat } from "../common/common";
+import { formatListMap } from "../formatListMap/formatListMap";
 import { formatParts } from "../formatParts/formatParts";
 import { msToMap, type msToMapOptions } from "../msToMap/msToMap";
 
@@ -42,16 +43,8 @@ export interface FormatListOptions extends msToMapOptions {
  * ```
  */
 export function formatList(time: number, options: FormatListOptions = {}): string {
-	const { locale, max, localeMatcher, listType: type, listStyle, relativeStyle } = options;
+	const { max } = options;
 	const unitMap = msToMap(time, { max });
 
-	const rl = createRelativeTimeFormat(locale, { localeMatcher, style: relativeStyle });
-
-	const lf = new Intl.ListFormat(locale, {
-		localeMatcher,
-		style: listStyle,
-		type,
-	});
-
-	return lf.format(formatParts(unitMap, rl));
+	return formatListMap(unitMap, options);
 }
