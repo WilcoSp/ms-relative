@@ -9,12 +9,13 @@ export const unitTypes: Record<UnitType, UnitType> = {
 	hour: "hour",
 	minute: "minute",
 	second: "second",
+	month: "month",
 } satisfies Record<UnitType, UnitType>;
 
 /**
  * used as keys for msToMap & msToObject
  */
-export type UnitType = Exclude<Intl.RelativeTimeFormatUnitSingular, "quarter" | "month">; //(typeof unitTypes)[keyof typeof unitTypes];
+export type UnitType = Exclude<Intl.RelativeTimeFormatUnitSingular, "quarter">; //(typeof unitTypes)[keyof typeof unitTypes];
 
 /**
  * amount of ms in a second

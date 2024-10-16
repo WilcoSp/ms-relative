@@ -1,5 +1,5 @@
-import { createRelativeTimeFormat, type RelativeOptions } from "../common/common";
-import { formatParts } from "../formatParts/formatParts";
+import { type RelativeOptions } from "../common/common";
+import { formatMap } from "../formatMap/formatMap";
 import { msToMap, type msToMapOptions } from "../msToMap/msToMap";
 
 /**
@@ -30,7 +30,9 @@ export function format(time: number, options: FormatOptions = {}): string {
 	const { max, locale } = options;
 	const unitMap = msToMap(time, { max });
 
-	const rl = createRelativeTimeFormat(locale, options);
+	// const rl = createRelativeTimeFormat(locale, options);
 
-	return formatParts(unitMap, rl).join(" ");
+	// return formatParts(unitMap, rl).join(" ");
+
+	return formatMap(unitMap, options);
 }

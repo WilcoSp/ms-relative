@@ -44,13 +44,13 @@
 		"ms-relative"
 	],
 	"devDependencies": {
-		"@types/node": "^20.12.7",
-		"@vitest/coverage-v8": "^1.4.0",
-		"bumpp": "^9.4.0",
-		"esbuild-plugin-file-path-extensions": "^2.0.0",
-		"jsr": "^0.12.1",
-		"tsup": "^8.0.2",
-		"typescript": "^5.4.4",
-		"vitest": "^1.4.0"
+		"@types/node": "^22.7.5",
+		"@vitest/coverage-v8": "^2.1.3",
+		"bumpp": "^9.7.1",
+		"esbuild-plugin-file-path-extensions": "^2.1.3",
+		"jsr": "^0.13.2",
+		"tsup": "^8.3.0",
+		"typescript": "^5.6.3",
+		"vitest": "^2.1.3"
 	}
 }

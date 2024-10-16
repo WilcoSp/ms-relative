@@ -9,7 +9,7 @@ import type { UnitType } from "../units/units";
  * @returns parts as a string[]
  */
 export function formatParts(map: UnitValueMap, rltf: Intl.RelativeTimeFormat): string[] {
-	return [...map].map(([unitType, value], index, arr) => {
+	return [...map].map(([unitType, value], index) => {
 		const part = formatPart(Math.abs(value), unitType, rltf);
 		if (value < 0 && index < 1) {
 			return `-${part}`;
