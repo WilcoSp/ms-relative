@@ -10,14 +10,14 @@ jobs:
 
         steps:
             - uses: actions/checkout@v3
-            - uses: pnpm/action-setup@v3
+            - uses: pnpm/action-setup@v4
               with:
                   version: ^8
             - uses: actions/setup-node@v4
               with:
                   node-version: current
                   cache: "pnpm"
-            - run: pnpm install --frozen-lockfile
+            - run: pnpm install
             - name: last time test
               run: pnpm test
             - name: building

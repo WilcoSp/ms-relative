@@ -5,16 +5,13 @@ on:
     push:
         branches:
             - "*"
-    workflow_dispatch:
-        branches:
-            - "*"
 
 jobs:
     Vitest:
         runs-on: "ubuntu-latest"
         steps:
             - uses: actions/checkout@v3
-            - uses: pnpm/action-setup@v3
+            - uses: pnpm/action-setup@v4
               with:
                   version: ^8
             - uses: actions/setup-node@v4
