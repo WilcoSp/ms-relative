@@ -8,7 +8,7 @@ import type { UnitValueMap } from "../msToMap/msToMap";
  * @param options options you want for the formatting
  * @returns a formatted string based on the given map
  */
-export function formatMap(unitMap: UnitValueMap, options: RelativeOptions & { locale?: string } = {}) {
+export function formatMap(unitMap: UnitValueMap, options: RelativeOptions & { locale?: string } = {}): string {
 	const { locale } = options;
 
 	const rl = createRelativeTimeFormat(locale, options);

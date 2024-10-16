@@ -9,7 +9,7 @@ import type { UnitValueMap } from "../msToMap/msToMap";
  * @param options options you wants
  * @returns a formatted list string based on the given map
  */
-export function formatListMap(unitMap: UnitValueMap, options: Omit<FormatListOptions, "max">) {
+export function formatListMap(unitMap: UnitValueMap, options: Omit<FormatListOptions, "max">): string {
 	const { locale, localeMatcher, listType: type, listStyle, relativeStyle } = options;
 
 	const rl = createRelativeTimeFormat(locale, { localeMatcher, style: relativeStyle });
