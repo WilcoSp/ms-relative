@@ -1,6 +1,6 @@
 {
 	"name": "ms-relative",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "MS utility library for formatting/parsing milliseconds to/from strings in most locales",
 	"author": "Wilco Spruijt",
 	"license": "MIT",
