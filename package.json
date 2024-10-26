@@ -7,6 +7,10 @@
 	"type": "module",
 	"repository": "https://github.com/WilcoSp/ms-relative",
 	"homepage": "https://github.com/WilcoSp/ms-relative",
+	"bugs": {
+		"url": "https://github.com/WilcoSp/ms-relative/issues"
+	},
+	"sideEffects": false,
 	"require": "dist/bundle.cjs",
 	"browser": "dist/bundle.mjs",
 	"import": "dist/index.mjs",
